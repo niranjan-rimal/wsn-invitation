@@ -1,0 +1,1281 @@
+/* ==========================================
+   WEDDING INVITATION - COMPLETE CSS
+   Niranjan & Suzata - 26th Falgun, 2082
+   ========================================== */
+
+/* ========== ROOT VARIABLES ========== */
+:root {
+    --maroon-dark: #8B0000;
+    --maroon-medium: #800020;
+    --maroon-light: #5C0000;
+    --burgundy-deep: #5D1049;
+    --burgundy-dark: #3D0831;
+    
+    --gold-bright: #FFD700;
+    --gold-medium: #DAA520;
+    --gold-bronze: #B8860B;
+    --gold-orange: #FFA500;
+    
+    --cream-wheat: #F5DEB3;
+    --cream-light: #FFF8F0;
+    --cream-antique: #FAEBD7;
+    
+    --green-dark: #2C5F2D;
+    --pink-light: #FFB6C1;
+    --pink-soft: #FFE4E1;
+    
+    --text-dark: #4A4A4A;
+    --text-gray: #696969;
+    
+    --font-primary: 'Montserrat', sans-serif;
+    --font-script: 'Great Vibes', cursive;
+    --font-serif: 'Playfair Display', serif;
+    --font-nepali: 'Noto Sans Devanagari', sans-serif;
+}
+
+/* ========== GLOBAL RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+    background: #000;
+}
+
+/* ========== TEXT GRADIENT ========== */
+.text-gradient {
+    background: linear-gradient(to right, var(--maroon-dark), var(--gold-bronze), var(--maroon-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+    background-size: 200% auto;
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+/* ========== LOADING SCREEN ========== */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--burgundy-deep) 0%, var(--burgundy-dark) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+.mandala-spinner {
+    width: 80px;
+    height: 80px;
+    border: 6px solid rgba(255, 215, 0, 0.2);
+    border-top-color: var(--gold-bright);
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-title {
+    font-family: var(--font-script);
+    font-size: clamp(36px, 6vw, 48px);
+    color: var(--gold-bright);
+    margin-top: 30px;
+}
+
+/* ========== ENVELOPE OVERLAY ========== */
+.envelope-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at center, #5C0000 0%, #2b0000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.envelope-content {
+    background: linear-gradient(135deg, #fff9f0 0%, #ffffff 100%);
+    padding: 60px 40px 50px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    max-width: 90%;
+    width: 500px;
+    position: relative;
+    border: 3px solid var(--gold-medium);
+    margin-top: 30px;
+}
+
+.wax-seal {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--maroon-dark), var(--maroon-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-medium);
+    font-family: var(--font-script);
+    font-size: 32px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 4px double var(--gold-medium);
+    z-index: 10;
+    animation: seal-pulse 2s infinite;
+}
+
+@keyframes seal-pulse {
+    0%, 100% { box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+    50% { box-shadow: 0 8px 30px rgba(218, 165, 32, 0.6); }
+}
+
+.envelope-to {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.envelope-guest-name {
+    font-family: var(--font-serif);
+    font-size: clamp(32px, 7vw, 42px);
+    margin: 10px 0 20px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.pleasure-text {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--maroon-dark);
+}
+
+.ornamental-divider {
+    margin: 15px auto;
+    opacity: 0.8;
+}
+
+.delighted-text {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.btn-open-invitation {
+    background: linear-gradient(135deg, var(--maroon-dark), var(--maroon-light));
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.3);
+}
+
+.btn-open-invitation:hover {
+    background: linear-gradient(135deg, var(--gold-medium), var(--gold-bronze));
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(218, 165, 32, 0.4);
+}
+
+.pulse-animation {
+    animation: pulse-btn 2s infinite;
+}
+
+@keyframes pulse-btn {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.hidden-content {
+    display: none;
+}
+
+/* ========== PAGE SECTIONS ========== */
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ========== HERO PAGE ========== */
+.hero-page {
+    background: linear-gradient(135deg, var(--burgundy-deep) 0%, var(--burgundy-dark) 100%);
+    position: relative;
+    padding-bottom: 150px;
+}
+
+.mandala-bg {
+    position: absolute;
+    width: min(900px, 90vw);
+    height: min(900px, 90vw);
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23DAA520" stroke-width="0.5" opacity="0.3"/><circle cx="50" cy="50" r="30" fill="none" stroke="%23DAA520" stroke-width="0.5" opacity="0.3"/></svg>') center/contain no-repeat;
+    opacity: 0.15;
+    animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.ganesh-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.ganesh-icon {
+    width: clamp(280px, 45vw, 450px);
+    height: auto;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+.floating-animation {
+    animation: float-ganesh 6s ease-in-out infinite;
+}
+
+@keyframes float-ganesh {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.ganesh-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 105%;
+    height: 105%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.25) 0%, rgba(255, 215, 0, 0.15) 35%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: glow-soft-pulse 5s ease-in-out infinite;
+}
+
+@keyframes glow-soft-pulse {
+    0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.75; transform: translate(-50%, -50%) scale(1.04); }
+}
+
+.ganesh-mantra {
+    font-family: var(--font-script);
+    font-size: 26px;
+    color: var(--gold-bright);
+    margin-top: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+.initials {
+    font-family: var(--font-script);
+    font-size: clamp(80px, 15vw, 130px);
+    background: linear-gradient(45deg, var(--gold-bright), var(--gold-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: clamp(30px, 5vw, 50px);
+    margin: 30px 0;
+}
+
+.blessing {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: var(--cream-wheat);
+    text-align: center;
+    letter-spacing: clamp(8px, 2vw, 15px);
+    text-transform: uppercase;
+    line-height: 2;
+    max-width: 600px;
+}
+
+.highlight {
+    color: var(--gold-bright);
+    font-weight: 600;
+    letter-spacing: clamp(10px, 2.5vw, 20px);
+    display: block;
+    margin-top: 10px;
+}
+
+/* ========== SCROLL INDICATOR ========== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 25px;
+    border-radius: 30px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    cursor: pointer;
+    text-align: center;
+}
+
+.scroll-indicator span {
+    display: block;
+    color: var(--gold-bright);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.arrow-down {
+    color: var(--gold-bright);
+}
+
+.bounce-animation {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-8px); }
+}
+
+/* ========== GREETING PAGE ========== */
+.greeting-page {
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-soft) 100%);
+}
+
+.greeting-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.namaste-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: 400;
+    color: var(--maroon-dark);
+    margin-bottom: 30px;
+}
+
+.guest-name {
+    font-family: var(--font-script);
+    font-size: clamp(48px, 10vw, 80px);
+    display: block;
+    margin-top: 20px;
+    line-height: 1.2;
+}
+
+.relationship {
+    font-family: var(--font-nepali);
+    font-size: clamp(18px, 3vw, 24px);
+    color: var(--green-dark);
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+.custom-message {
+    font-size: clamp(16px, 3vw, 20px);
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-top: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.decorative-line {
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-medium), transparent);
+    margin: 40px auto 0;
+}
+
+/* ========== DATE PAGE ========== */
+.date-page {
+    background: var(--cream-light);
+}
+
+.date-content {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.please-join,
+.for-wedding {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: var(--green-dark);
+    letter-spacing: clamp(15px, 3vw, 25px);
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+.calendar-widget {
+    background: white;
+    padding: clamp(30px, 5vw, 50px);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.calendar-month {
+    font-family: var(--font-script);
+    font-size: clamp(36px, 7vw, 52px);
+    color: var(--green-dark);
+    margin-bottom: 25px;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--text-gray);
+    font-size: clamp(12px, 2vw, 16px);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: clamp(8px, 1.5vw, 15px);
+}
+
+.date {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: var(--text-dark);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.date:not(.highlighted-heart):hover {
+    background: rgba(218, 165, 32, 0.15);
+    transform: scale(1.05);
+}
+
+.empty-date {
+    aspect-ratio: 1;
+}
+
+.highlighted-heart {
+    background: var(--gold-bright) !important;
+    color: var(--maroon-dark) !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    animation: heart-pulse 2s infinite !important;
+}
+
+.heart-icon {
+    font-size: 16px;
+}
+
+.date-number {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+@keyframes heart-pulse {
+    0%, 100% { transform: scale(1.1); box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+    50% { transform: scale(1.15); box-shadow: 0 0 25px rgba(255, 215, 0, 0.8); }
+}
+
+.couple-names {
+    margin: 40px 0;
+}
+
+.couple-names .groom,
+.couple-names .bride {
+    font-family: var(--font-script);
+    font-size: clamp(48px, 9vw, 70px);
+    color: var(--green-dark);
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+.couple-names .and {
+    font-family: var(--font-primary);
+    font-size: clamp(28px, 5vw, 36px);
+    color: var(--text-gray);
+    font-weight: 300;
+    display: block;
+    margin: 20px 0;
+}
+
+/* ========== COUNTDOWN ========== */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: clamp(15px, 3vw, 30px);
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    text-align: center;
+    min-width: clamp(60px, 15vw, 100px);
+}
+
+.countdown-number {
+    display: block;
+    font-size: clamp(36px, 7vw, 56px);
+    font-weight: 700;
+    color: var(--maroon-dark);
+    line-height: 1;
+}
+
+.countdown-label {
+    display: block;
+    font-size: clamp(12px, 2vw, 14px);
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+/* ========== INVITATION PAGE ========== */
+.invitation-page {
+    background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon-light) 100%);
+}
+
+.invitation-border {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    border: 3px solid var(--gold-bright);
+    border-radius: 10px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.hanging-decorations {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 clamp(20px, 5vw, 100px);
+}
+
+.lantern {
+    width: clamp(40px, 8vw, 60px);
+    height: clamp(70px, 12vw, 100px);
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold-orange));
+    border-radius: 0 0 50% 50%;
+    position: relative;
+    animation: swing 3s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+.couple-illustration-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 30px;
+}
+
+.couple-illustration-main img {
+    max-width: min(400px, 80vw);
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+}
+
+.invitation-text {
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 5vw, 34px);
+    color: var(--cream-wheat);
+    text-align: center;
+    margin: 30px 0;
+    line-height: 1.6;
+    max-width: 600px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.wedding-details {
+    text-align: center;
+    margin: 40px 0;
+    max-width: 700px;
+}
+
+.groom-details,
+.bride-details {
+    margin: 30px 0;
+}
+
+.wedding-details .name {
+    font-family: var(--font-serif);
+    font-size: clamp(42px, 8vw, 60px);
+    color: var(--gold-bright);
+    margin: 15px 0;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.wedding-details .parents {
+    font-size: clamp(13px, 2.5vw, 16px);
+    color: var(--cream-wheat);
+    letter-spacing: clamp(2px, 1vw, 5px);
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.ampersand {
+    font-family: var(--font-serif);
+    font-size: clamp(56px, 10vw, 80px);
+    color: var(--gold-bright);
+    margin: 30px 0;
+    font-weight: 300;
+}
+
+.event-info {
+    text-align: center;
+    margin-top: 50px;
+    max-width: 600px;
+}
+
+.event-date-main {
+    font-size: clamp(22px, 4vw, 30px);
+    color: #FFFFFF;
+    letter-spacing: 5px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.event-date-main:hover {
+    transform: scale(1.05);
+    color: var(--gold-bright);
+}
+
+.event-info .time {
+    font-size: clamp(18px, 3vw, 24px);
+    color: var(--cream-wheat);
+    margin: 10px 0;
+}
+
+.venue-intro {
+    font-family: var(--font-script);
+    font-size: clamp(22px, 4vw, 28px);
+    color: var(--cream-wheat);
+    font-style: italic;
+    margin: 30px 0 15px;
+}
+
+.event-info .venue {
+    font-size: clamp(20px, 4vw, 26px);
+    color: var(--gold-bright);
+    letter-spacing: clamp(8px, 2vw, 15px);
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.event-info .address {
+    font-size: clamp(15px, 3vw, 18px);
+    color: var(--cream-wheat);
+    letter-spacing: clamp(3px, 1vw, 8px);
+    opacity: 0.9;
+}
+
+.floral-left,
+.floral-right {
+    position: absolute;
+    bottom: 40px;
+    width: clamp(120px, 25vw, 200px);
+    height: clamp(120px, 25vw, 200px);
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="%23DAA520" opacity="0.3"/></svg>') center/contain no-repeat;
+    opacity: 0.5;
+}
+
+.floral-left { left: 20px; }
+.floral-right { right: 20px; transform: scaleX(-1); }
+
+/* ========== RECEPTION PAGE ========== */
+.reception-page {
+    background: linear-gradient(135deg, var(--cream-light) 0%, var(--cream-antique) 100%);
+}
+
+.decorative-divider {
+    width: clamp(300px, 60vw, 500px);
+    height: 50px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50"><path d="M0,25 Q125,15 250,25 T500,25" fill="none" stroke="%23B8860B" stroke-width="2"/><circle cx="250" cy="25" r="8" fill="%23DAA520"/></svg>') center/contain no-repeat;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(32px, 6vw, 48px);
+    color: var(--maroon-dark);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.reception-card-royal {
+    background: #fff;
+    max-width: 650px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+.royal-border {
+    border: 2px solid var(--gold-medium);
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    background: linear-gradient(to bottom, #FFFAF0, #FFF);
+    position: relative;
+}
+
+.royal-border::before,
+.royal-border::after {
+    content: "❖";
+    position: absolute;
+    color: var(--gold-medium);
+    font-size: 24px;
+}
+
+.royal-border::before { top: 10px; left: 10px; }
+.royal-border::after { bottom: 10px; right: 10px; }
+
+.reception-icon-glow {
+    font-size: 40px;
+    background: #FFF;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: -60px auto 20px;
+    border: 2px solid var(--gold-medium);
+    box-shadow: 0 5px 15px rgba(218, 165, 32, 0.3);
+}
+
+.royal-title {
+    font-family: var(--font-script);
+    font-size: 42px;
+    color: var(--maroon-dark);
+    margin-bottom: 20px;
+}
+
+.royal-date-box {
+    background: var(--maroon-dark);
+    color: var(--gold-bright);
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+}
+
+.royal-date {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 700;
+    display: block;
+}
+
+.royal-day {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.royal-time {
+    font-size: 18px;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.royal-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-medium), transparent);
+    width: 60%;
+    margin: 20px auto;
+}
+
+.royal-venue-name {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    color: var(--maroon-dark);
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.royal-address {
+    color: #777;
+    font-size: 16px;
+}
+
+.btn-directions {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, var(--maroon-dark), var(--maroon-light));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: clamp(14px, 2.5vw, 16px);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+.btn-directions:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(139, 0, 0, 0.4);
+}
+
+/* Wedding Directions Button (same style as reception) */
+.btn-directions-wedding {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold-bronze));
+    color: var(--maroon-dark);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: clamp(14px, 2.5vw, 16px);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
+    margin-top: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-directions-wedding:hover {
+    background: linear-gradient(135deg, #FFF, var(--gold-bright));
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(218, 165, 32, 0.6);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background: linear-gradient(135deg, var(--maroon-dark) 0%, #5C0000 100%);
+    padding: 80px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path d="M0,50 Q300,20 600,50 T1200,50 L1200,0 L0,0 Z" fill="%23FFF8F0"/></svg>') bottom center/cover no-repeat;
+    opacity: 0.1;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-decorative-top {
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+    margin: 0 auto 40px;
+}
+
+@keyframes romanticGlow {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        filter: brightness(100%);
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 105, 180, 0.5);
+        filter: brightness(110%);
+    }
+}
+
+.romantic-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    animation: romanticGlow 3s ease-in-out infinite;
+}
+
+.heart-emoji {
+    font-size: 24px;
+}
+
+.hashtag-text {
+    font-family: var(--font-serif);
+    font-size: clamp(24px, 5vw, 32px);
+    color: var(--gold-bright);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.footer-divider {
+    width: 250px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+    margin: 30px auto;
+}
+
+.closing-message {
+    font-family: var(--font-serif);
+   font-size: clamp(20px, 4vw, 26px);
+    color: var(--cream-wheat);
+    margin: 30px 0;
+    font-style: italic;
+}
+
+.copyright {
+    font-size: clamp(12px, 2vw, 14px);
+    color: rgba(245, 222, 179, 0.7);
+    margin-top: 30px;
+    letter-spacing: 1px;
+}
+
+/* ========== SCROLL RIPPLE EFFECT ========== */
+.scroll-ripple {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--gold-bright);
+    border-radius: 50%;
+    opacity: 0;
+    animation: ripple-expand 1s ease-out;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@keyframes ripple-expand {
+    0% {
+        width: 50px;
+        height: 50px;
+        opacity: 1;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .page {
+        padding: 40px 15px;
+    }
+    
+    .envelope-content {
+        padding: 40px 25px;
+        width: 90%;
+    }
+    
+    .envelope-guest-name {
+        font-size: 24px;
+    }
+    
+    .ganesh-icon {
+        width: 250px;
+    }
+    
+    .calendar-grid {
+        gap: 5px;
+    }
+    
+    .hanging-decorations {
+        padding: 0 10px;
+    }
+    
+    .countdown {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blessing {
+        letter-spacing: 5px;
+    }
+    
+    .highlight {
+        letter-spacing: 8px;
+    }
+    
+    .initials {
+        letter-spacing: 20px;
+    }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    .loading,
+    .scroll-indicator,
+    .footer {
+        display: none;
+    }
+    
+    .page {
+        page-break-after: always;
+    }
+}
+
+/* ========== WOW FEATURES - ADD AT END OF CSS ========== */
+
+/* 1. LIVE COUNTER */
+.live-counter {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.3);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--maroon-dark);
+    z-index: 1000;
+    animation: pulse-counter 2s infinite;
+    border: 2px solid var(--gold-bright);
+}
+
+@keyframes pulse-counter {
+    0%, 100% { transform: scale(1); box-shadow: 0 8px 25px rgba(139, 0, 0, 0.3); }
+    50% { transform: scale(1.05); box-shadow: 0 10px 35px rgba(139, 0, 0, 0.4); }
+}
+
+.counter-icon {
+    font-size: 20px;
+    margin-right: 8px;
+    animation: wave 2s infinite;
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+#viewCount {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold-bright);
+    margin: 0 5px;
+}
+
+/* 2. FLOATING PETALS */
+.petal {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle at 30% 30%, #FFB6C1, #FF69B4);
+    border-radius: 50% 0 50% 0;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 5;
+    animation: fall linear infinite;
+    box-shadow: 0 2px 5px rgba(255, 105, 180, 0.3);
+}
+
+.petal::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 70%, #FFE4E1, transparent);
+    border-radius: 0 50% 0 50%;
+    transform: rotate(90deg);
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Different petal animations for variety */
+.petal:nth-child(2n) {
+    animation-duration: 7s;
+    width: 18px;
+    height: 18px;
+}
+
+.petal:nth-child(3n) {
+    animation-duration: 9s;
+    width: 12px;
+    height: 12px;
+}
+
+.petal:nth-child(4n) {
+    animation-duration: 11s;
+}
+
+/* 3. SPARKLE CURSOR TRAIL */
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #FFD700, #FFA500, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkleAnim 0.8s ease-out;
+    z-index: 9999;
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500;
+}
+
+.sparkle::before {
+    content: '✨';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    font-size: 20px;
+    animation: sparkleRotate 0.8s ease-out;
+}
+
+@keyframes sparkleAnim {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) rotate(180deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sparkleRotate {
+    0% { transform: rotate(0deg) scale(0); }
+    50% { transform: rotate(180deg) scale(1); }
+    100% { transform: rotate(360deg) scale(0); }
+}
+
+/* 4. FIREWORKS CONTAINER (no extra CSS needed - using confetti.js) */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .live-counter {
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+    
+    #viewCount {
+        font-size: 16px;
+    }
+    
+    .counter-icon {
+        font-size: 18px;
+    }
+    
+    .petal {
+        width: 12px;
+        height: 12px;
+    }
+}
