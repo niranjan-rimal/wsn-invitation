@@ -511,6 +511,13 @@
       "relationship_nepali": "हाम्रो आदरणीय अतिथि",
       "message": "We are delighted to invite you to our wedding celebration. Your presence will make our day even more special. We look forward to celebrating this joyous occasion with you."
     },
+    "sonica-suwal": {
+      "name": "Sonica Suwal",
+      "title": "Ms.",
+      "relationship": "guest",
+      "relationship_nepali": "हाम्रो आदरणीय अतिथि",
+      "message": "We are delighted to invite you to our wedding celebration. Your presence will make our day even more special. We look forward to celebrating this joyous occasion with you."
+    },
     "default": {
       "name": "Honored Guest",
       "title": "Mr./Mrs.",
